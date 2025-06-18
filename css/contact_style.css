@@ -8,6 +8,14 @@
     --fuentePrincipal: 'Nunito', sans-serif;;
 }
 
+body.dark-mode {
+    --principal-dm: #f2d7ee; /* Light color for text */
+    --secundario-dm: #a5668b; /* Accent */
+    --secundarioClaro-dm: #69306d; /* Lighter Accent */
+    --blanco-dm: #0e103d; /* Dark color for background */
+    --gris-dm: #333333; /* Darker grey */
+}
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -89,6 +97,19 @@ body{
     width: 100%;
 }
 
+body.dark-mode {
+    background-color: var(--blanco-dm);
+    color: var(--principal-dm);
+}
+
+body.dark-mode a {
+    color: var(--secundarioClaro-dm);
+}
+
+body.dark-mode a:hover {
+    color: var(--secundario-dm);
+}
+
 /*Codigo*/
 
 header {
@@ -97,6 +118,10 @@ header {
     height: 5rem;
     background-color: var(--principal);
     padding: 0.5rem 2rem;
+}
+
+body.dark-mode header {
+    background-color: var(--blanco-dm);
 }
 
 .header-logo{
@@ -111,12 +136,20 @@ header {
     border-right: 2px solid var(--secundarioClaro) ;
 }
 
+body.dark-mode .header-logo-container {
+    border-right-color: var(--secundario-dm);
+}
+
 .title-logo{
     color: white;
     text-align: center;
     align-items: center;
     display: flex;
 
+}
+
+body.dark-mode .title-logo {
+    color: var(--principal-dm);
 }
 
 .header-options{
@@ -130,9 +163,18 @@ header {
     color: white;
 }
 
+body.dark-mode .header-options__links {
+    border-bottom-color: var(--secundario-dm);
+    color: var(--principal-dm);
+}
+
 .header-options__links:hover{
     color: var(--secundarioClaro);
     border-radius: 10%;
+}
+
+body.dark-mode .header-options__links:hover {
+    color: var(--secundario-dm);
 }
 
 .header-border{
@@ -172,3 +214,52 @@ header {
 
 
 /*Animations*/
+
+/* Dark Mode Styles for Contact Page Specific Elements */
+body.dark-mode .main-contact {
+    background-color: var(--blanco-dm); /* Assuming main content area background */
+}
+
+body.dark-mode .contact-form {
+    background-color: var(--gris-dm); /* Slightly different background for the form itself */
+    padding: 20px; /* Example padding */
+    border-radius: 8px; /* Example border radius */
+}
+
+body.dark-mode .contact-form label {
+    color: var(--principal-dm); /* Light text for labels */
+    display: block;
+    margin-bottom: 8px;
+}
+
+body.dark-mode .contact-form input[type="text"],
+body.dark-mode .contact-form input[type="email"],
+body.dark-mode .contact-form textarea {
+    background-color: var(--blanco-dm); /* Dark background for inputs */
+    color: var(--principal-dm); /* Light text in inputs */
+    border: 1px solid var(--secundario-dm); /* Accent border */
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+body.dark-mode .contact-form input[type="text"]::placeholder,
+body.dark-mode .contact-form input[type="email"]::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+    color: var(--gris-dm); /* Lighter placeholder text */
+}
+
+body.dark-mode .contact-form button {
+    background-color: var(--secundario-dm); /* Accent background for button */
+    color: var(--principal-dm); /* Light text on button */
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+body.dark-mode .contact-form button:hover {
+    background-color: var(--secundarioClaro-dm); /* Lighter accent on hover */
+}
