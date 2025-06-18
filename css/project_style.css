@@ -8,6 +8,14 @@
     --fuentePrincipal: 'Nunito', sans-serif;;
 }
 
+body.dark-mode {
+    --principal-dm: #f2d7ee; /* Light color for text */
+    --secundario-dm: #a5668b; /* Accent */
+    --secundarioClaro-dm: #69306d; /* Lighter Accent */
+    --blanco-dm: #0e103d; /* Dark color for background */
+    --gris-dm: #333333; /* Darker grey */
+}
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -96,6 +104,20 @@ body{
     width: 100%;
 }
 
+body.dark-mode {
+    background-color: var(--blanco-dm);
+    color: var(--principal-dm);
+}
+
+body.dark-mode a {
+    color: var(--secundarioClaro-dm);
+}
+
+body.dark-mode a:hover {
+    color: var(--secundario-dm);
+}
+
+
 /*Codigo*/
 header {
     position: -webkit-sticky;  
@@ -106,6 +128,10 @@ header {
     height: 5rem;
     background-color: var(--principal);
     padding: 0.5rem 2rem;
+}
+
+body.dark-mode header {
+    background-color: var(--blanco-dm);
 }
 
 main{
@@ -126,12 +152,20 @@ main{
     border-right: 2px solid var(--secundarioClaro) ;
 }
 
+body.dark-mode .header-logo-container {
+    border-right-color: var(--secundario-dm);
+}
+
 .title-logo{
     color: white;
     text-align: center;
     align-items: center;
     display: flex;
 
+}
+
+body.dark-mode .title-logo {
+    color: var(--principal-dm);
 }
 
 .header-options{
@@ -145,9 +179,18 @@ main{
     color: white;
 }
 
+body.dark-mode .header-options__links {
+    border-bottom-color: var(--secundario-dm);
+    color: var(--principal-dm);
+}
+
 .header-options__links:hover{
     color: var(--secundarioClaro);
     border-radius: 10%;
+}
+
+body.dark-mode .header-options__links:hover {
+    color: var(--secundario-dm);
 }
 
 .header-border{
@@ -157,6 +200,10 @@ main{
 .projects-titles{
     color: var(--principal);
     font-size: 5rem;
+}
+
+body.dark-mode .projects-titles {
+    color: var(--principal-dm);
 }
 
 .become-chicken{
@@ -171,6 +218,13 @@ main{
     padding: 0 5%;
 }
 
+body.dark-mode .become-chicken {
+    background: linear-gradient(to right, rgba(14, 16, 61, 0.3), rgba(14, 16, 61, 0.9)), url("../img/game-background.svg") no-repeat fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .become-chicken h1{
     align-self: center;
     justify-self: start;
@@ -180,6 +234,10 @@ main{
     color: white;
     grid-column: 1/2;
     grid-row: 1/2;
+}
+
+body.dark-mode .become-chicken h1 {
+    color: var(--principal-dm);
 }
 
 .become-chicken h2{
@@ -192,6 +250,10 @@ main{
     grid-row: 1/2;
 }
 
+body.dark-mode .become-chicken h2 {
+    color: var(--principal-dm);
+}
+
 .become-chicken p{
     grid-column: 2/3;
     grid-row: 2/3;
@@ -200,6 +262,10 @@ main{
     text-align: justify;
     margin: 0;
     height: 40rem;
+}
+
+body.dark-mode .become-chicken p {
+    color: var(--principal-dm);
 }
 
 .java-text{
@@ -274,6 +340,18 @@ main{
         padding: 2rem 5%;
     }
 
+    body.dark-mode .become-chicken {
+        /* Ensure the media query specific background also gets a dark mode version if different enough */
+        /* Here, the default dark mode .become-chicken gradient might be fine, or adjust if needed */
+        /* For simplicity, we assume the base dark mode .become-chicken style is sufficient, */
+        /* unless text becomes unreadable with the phone-specific gradient. */
+        /* If the phone gradient is very different, add new rules here: */
+        /* background: linear-gradient(to top, rgba(14, 16, 61, 0.5), rgba(14, 16, 61, 1)), url("../img/game-background-phone.svg") no-repeat fixed; */
+        /* background-size: cover; */
+        /* background-repeat: no-repeat; */
+        /* background-position: center center; */
+    }
+
     .become-chicken h1{
         font-size: 2.5rem;
     }
@@ -301,3 +379,33 @@ main{
 
 
 /*Animations*/
+
+/* Dark Mode Styles for Project Page Specific Elements (e.g., project cards if added later) */
+body.dark-mode .main-projects { /* Assuming a container for all projects */
+    background-color: var(--blanco-dm); /* Main background for projects area */
+}
+
+body.dark-mode .project-card {
+    background-color: var(--gris-dm); /* Background for individual project cards */
+    color: var(--principal-dm); /* Text color within cards */
+    border: 1px solid var(--secundario-dm); /* Border for cards */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+body.dark-mode .project-card h3 { /* Assuming titles within cards */
+    color: var(--principal-dm);
+}
+
+body.dark-mode .project-card p {
+    color: var(--principal-dm);
+}
+
+body.dark-mode .project-card a {
+    color: var(--secundarioClaro-dm); /* Link color within cards */
+}
+
+body.dark-mode .project-card a:hover {
+    color: var(--secundario-dm);
+}
